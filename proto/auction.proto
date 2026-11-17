@@ -1,0 +1,17 @@
+syntax = "proto3";
+package proto;
+option go_package = "auction/proto";
+
+
+service Auction {
+	rpc Bid(BidRequest) returns (BidReply);
+	rpc Result(Empty) returns (ResultReply)
+	rpc Replicate(State) returns (Empty)
+	rpc Ping(Empty) returns (Empty)
+}
+
+message Empty {}
+message BidRequest {String bidder = 1; int amount = 2}
+message BidReply {enum Outcome {SUCCES = 0; FAIL = 1; EXCEPTION = 2} Outcome outcome = 1;}
+message ResultReply { bool over = 1; string winner = 2; int64 amount = 3; }
+message State { string highest_bidder = 1; int64 highest = 2; int64 end_unix = 3; }
