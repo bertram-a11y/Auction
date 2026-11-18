@@ -7,7 +7,7 @@ func Bid(amount int) {
 	// call to server brr brr, we bid this amount
 }
 
-func Query() {
+func Query() int {
 	// query system to find amount
 	return 0
 }
