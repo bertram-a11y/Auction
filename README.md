@@ -25,7 +25,7 @@ Start a client in a fourth terminal:
 
 **Terminal 4**
 ```bash
-go run ./Client -name alice
+go run ./Client -name Mikkel
 ```
 
 Commands in the client:
